@@ -18,28 +18,38 @@
 <head>
   <title>Happy Birthday</title>
   <link rel="icon" type="image/x-icon" href="https://www.palingit.com/favicon.ico">
-  <meta name="description" content="Arik Junior">
+  <meta name="description" content="aureyk">
+  <style>
+#wallpaper.bg-img {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      object-position: center;
+      z-index: -1;
+    }
+  </style>
 </head>
 
 <body>
 
-  <!-- Ganti Audio di sini -->
-  <audio src="song/hbd-song.mp3" id="linkmp3" class="sembunyi"></audio>
+<audio src="song/hbd-song.mp3" id="linkmp3" class="sembunyi"></audio>
 
-  <div id="bodyblur">
-    <!-- Wallpaper --><img src="image/bg-3.webp" id="wallpaper" />
+<div id="bodyblur">
+    <img src="image/bg-3.webp" id="wallpaper" class="bg-img" />
     <div id="beneranblur"></div>
   </div>
 
   <div id='Content'>
 
     <div id="kadoIn">
-      <!-- Tombol Surat --><img src="https://feeldreams.github.io/kadoin.png" />
+      <img src="https://feeldreams.github.io/kadoin.png" />
     </div>
     <p id="ket">Klik Kadonya!</p>
 
     <div class="kumpulanstiker">
-      <!-- Stiker untuk Konten -->
       <img src="https://feeldreams.github.io/bunga.gif" id="fotostiker" />
       <img src="https://feeldreams.github.io/pusn.gif" id="fotostiker1" />
       <img src="https://feeldreams.github.io/pandacoklat.gif" id="fotostiker2" />
@@ -50,7 +60,7 @@
       <img src="https://feeldreams.github.io/pandacoklat.gif" id="fotostiker6" />
     </div>
 
-    <p id="halo" class="halo"></p>
+<p id="halo" class="halo"></p>
 
     <div>
       <blockquote id='bq' data-text='㋡'>
@@ -65,7 +75,6 @@
         </div>
 
         <p id="pesan2">Tunggu...</p>
-        <!-- Pesan -->
         <p id="pesan3">Ciee.. Ada yang Ultah Nih 🤣❤️</p>
         <p id="pesan4">Happy Birthday, </p>
         <p id="pesan5" class="gaya2">Nambah tua aja ya, hehe</p>
@@ -79,18 +88,14 @@
           yaa.. 🥳❤️</p>
         <p id="pesan10" class="gaya2">Happy Level Up Day!! 🥳</p>
 
-        <!-- Tombol Lanjut -->
         <p id="opsL">Klik untuk Lanjut</p>
       </blockquote>
     </div>
 
-    <!-- Tombol Kirim Pesan -->
     <div id="Tombol"><a id="By">&#128140; Lanjut</a></div>
 
-    <!-- Pesan Tambahan -->
     <p id="katatambahan" class="sembunyi"> Senyum dulu dong, masa ulang tahun cemberut? 😜</p>
 
-    <!-- Pesan Ditolak -->
     <div id="pesanditolak">
       <img id="stikerditolak" src="https://feeldreams.github.io/weee.gif" />
       <p id="kataditolak">Yaudah kalo gamau mh 😜</p>
@@ -103,20 +108,12 @@
 
     document.getElementById("kadoIn").onclick = function () { if (fungsiAwal == 0) { audio.play(); fungsiAwal = 1; kadoIn.style = "transition:all .8s ease;transform:scale(10);opacity:0"; wallpaper.style = "transform: scale(1.5);"; ket.style = "display:none"; setTimeout(initengahan, 300); setTimeout(inipesan, 500) } }
 
-    async function inipesan() {
-      var { value: nama } = await swals.fire({
-        title: 'Masukin Nama Kamu', input: 'text',
-      });
-      if (nama && nama.length < 11) {
-        window.nama = nama;
-        vketikhalo = "Hai, " + nama + " ✨";
-        mulainama();
-      } else {
-        await swals.fire('Ups!', 'Nama tidak boleh kosong atau lebih dari 10 karakter, ya!'); inipesan();
-      }
+async function inipesan() {
+      window.nama = "Ambar";
+      vketikhalo = "Hai, " + nama + " ✨";
+      mulainama();
     }
-
-    //Variable Pertanyaan Akhir
+    
     var tanya = 'Mau Kado Gak Nih? 😶❤️';
     var opstanya = 'Ayo jawab 😆';
     var tompositif = 'Mau';
@@ -125,7 +122,7 @@
     async function menuju() { pesanwhatsapp = " Makasiii udah ngucapin " + nama + " ultah ><"; await swals.fire('OK!', 'Kirim jawabannya ke WhatsApp aku, ya!', 'success'); window.location = "https://wa.me/+628515?text=Beb%20aku%20mau%20kado" + pesanwhatsapp; }
   </script>
   <script src="https://feeldreams.github.io/heihbd/script.js"></script>
-  <!-- Sampai Sini -->
+
 </body>
 
 </html>
